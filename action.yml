@@ -3,4 +3,4 @@ description: 'Say "Thank You" to new pull requests'
 author: '[Your Name]'
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'src/action.js'
