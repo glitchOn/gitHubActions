@@ -9,14 +9,14 @@ jobs:
     steps:
       - name: Create dir
         run: |
-          mkdir processed
+          mkdir data/processed
       - name: Checkout and run Script
         uses: actions/checkout@v2
       - name: run Script
         uses: ./
       - name: move processed files
         run: |
-           mv data/*.csv processed/
+           mv data/*.csv data/processed/
       - name: Commit files
         run: |
               git config user.name github-actions
