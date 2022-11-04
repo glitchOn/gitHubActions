@@ -26,9 +26,11 @@ jobs:
           done  
           uses: ./
       - name: move processed files
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: |
            mv data/*.csv data/processed/
       - name: Commit files
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: |
               git config user.name github-actions
               git config user.email github-actions@github.com
