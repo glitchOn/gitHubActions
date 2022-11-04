@@ -33,7 +33,7 @@ try {
 //==================================≠≠≠≠≠====================≠≠≠≠≠≠≠≠
 // Step 1 : "Get JWT token
 //==================================≠≠≠≠≠====================≠≠≠≠≠≠≠≠
-/*fetch("https://myDomain/api/login", {
+fetch("https://myDomain/api/login", {
     method: "POST",
     body: JSON.stringify({ username: "username", password: "password" }),
     headers: { "Content-type": "application/json" }
@@ -44,16 +44,10 @@ try {
         return res.token;
       })
       .then((token) => {
-        fetchlist(token)
-        $('.clickMe').click(function(){
-          // alert(this.id);
-          fetchSingle(token)
         });
       });
-  
-  //==================================≠≠≠≠≠====================≠≠≠≠≠≠≠≠
-  // Step 2 : "Get Object list
-  //==================================≠≠≠≠≠====================≠≠≠≠≠≠≠≠
+ run();
+  /*
   const fetchlist = (token) => {
     const baseUrl = "https://myDomain/api/request/"
       fetch(baseUrl, {
@@ -76,7 +70,7 @@ try {
           });
     } */
 
-    run();
+   
 } catch (error) {
   core.setFailed(error.message);
 }
