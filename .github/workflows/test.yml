@@ -7,5 +7,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Create dir
+        run: |
+          mkdir processed
+      - name: Checkout and run Script
       - uses: actions/checkout@v2
       - uses: ./
