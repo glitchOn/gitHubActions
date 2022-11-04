@@ -53,7 +53,7 @@ var __webpack_exports__ = {};
 const fs = __nccwpck_require__(147);
 
 async function run() {
-    fs.readFile("/data/test.csv", "utf8", function (err, data) {
+    fs.readFile("data/test.csv", "utf8", function (err, data) {
         console.log(data);
       });
   }
