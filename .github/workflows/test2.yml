@@ -2,6 +2,16 @@ name: Test2
 
 on:
   workflow_dispatch:
+    inputs:
+        name:
+          type: string
+          description: UserId for PRM TOKEN
+          required: true
+        password:
+          type: string
+          description: password for PRM TOKEN
+          required: true
+
 
 jobs:
   test:
