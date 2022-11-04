@@ -45,7 +45,7 @@ fetch("https://myDomain/api/login", {
       })
       .then((token) => {
         });
-      });
+      
  run();
   /*
   const fetchlist = (token) => {
