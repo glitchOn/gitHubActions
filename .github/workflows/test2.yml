@@ -1,0 +1,48 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.checkFileExists.outputs.changed}}
+    steps:
+     
+      - name: Checkout and run Script
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+      - name: Get specific changed files
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            data/**
+      - name: Run step if any of the listed files above change
+        id: CheckFileExists
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+              INPUTDIR=data/
+                    for i in $INPUTDIR/*.csv
+                    do
+                      echo "$i" # action on existing file, here echo.
+                      echo "changed=true" >> $GITHUB_OUTPUT
+                      break
+                    done
+      - name: Run Script
+        if: steps.checkFileExists.outputs.changed == 'true'
+        uses: ./
+      - name: move processed files
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+           mv data/*.csv data/processed/
+      - name: Commit files
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+              git config user.name github-actions
+              git config user.email github-actions@github.com
+              git add .
+              git commit -m "generated"
+              git push
