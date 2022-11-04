@@ -11,7 +11,7 @@ jobs:
       - name: Checkout and run Script
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 
+          fetch-depth: 5
       - name: Get specific changed files
         id: changed-files-specific
         uses: tj-actions/changed-files@v34
