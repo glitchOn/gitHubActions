@@ -1,0 +1,22 @@
+{
+  "name": "githubaction",
+  "version": "1.0.0",
+  "description": "Test github action",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glitchOn/gitHubActions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glitchOn/gitHubActions/issues"
+  },
+  "homepage": "https://github.com/glitchOn/gitHubActions#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0"
+  }
+}
