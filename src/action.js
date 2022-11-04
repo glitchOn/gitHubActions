@@ -33,7 +33,7 @@ try {
 //==================================≠≠≠≠≠====================≠≠≠≠≠≠≠≠
 // Step 1 : "Get JWT token
 //==================================≠≠≠≠≠====================≠≠≠≠≠≠≠≠
-fetch("https://myDomain/api/login", {
+/* fetch("https://myDomain/api/login", {
     method: "POST",
     body: JSON.stringify({ username: "username", password: "password" }),
     headers: { "Content-type": "application/json" }
@@ -44,7 +44,7 @@ fetch("https://myDomain/api/login", {
         return res.token;
       })
       .then((token) => {
-        });
+        });*/
       
  run();
   /*
