@@ -16,7 +16,7 @@ jobs:
         uses: ./
       - name: move processed files
         run: |
-           mv *.csv processed
+           mv data/*.csv processed
       - name: Commit files
         run: |
               git config user.name github-actions
