@@ -26,9 +26,6 @@ jobs:
           done  
       - name: run Script
         uses: ./
-      - name: Create dir
-        run: |
-          mkdir data/processed
       - name: move processed files
         run: |
            mv data/*.csv data/processed/
