@@ -12,4 +12,5 @@ jobs:
           mkdir processed
       - name: Checkout and run Script
         uses: actions/checkout@v2
+      - name: run Script
         uses: ./
