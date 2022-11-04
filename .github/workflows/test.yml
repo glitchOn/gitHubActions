@@ -15,6 +15,7 @@ jobs:
       - name: run Script
         uses: ./
       - name: move processed files
+        run: |
            mv *.csv processed
       - name: Commit files
         run: |
