@@ -24,8 +24,7 @@ jobs:
           for file in ${{ steps.changed-files-specific.outputs. all_changed_files }}; do
             echo "$file was modified"
           done  
-      - name: run Script
-        uses: ./
+          uses: ./
       - name: move processed files
         run: |
            mv data/*.csv data/processed/
