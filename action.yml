@@ -2,7 +2,7 @@ name: 'Thank You Action'
 description: 'Say "Thank You" to new pull requests'
 author: '[Your Name]'
 inputs:
-        name:
+        userId:
           type: string
           description: UserId for PRM TOKEN
           required: true
