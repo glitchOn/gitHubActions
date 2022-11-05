@@ -30,7 +30,7 @@ jobs:
               INPUTDIR=data
                     for i in $INPUTDIR/*.csv
                     do
-                      echo "$i" # action on existing file, here echo.
+                      echo "changed $i" # action on existing file, here echo.
                       echo "changed=true" >> $GITHUB_OUTPUT
                       echo ${{ inputs.userId }}
                       break
