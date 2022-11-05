@@ -39,7 +39,7 @@ jobs:
         if: steps.checkFileExists.outputs.changed == 'true'
         uses: ./
         with:
-          userId: ${{ inputs.userId }}
+          userId: ${{ inputs.name }}
           password: ${{ inputs.password }}
       - name: move processed files
         if: steps.checkFileExists.outputs.changed == 'true' 
