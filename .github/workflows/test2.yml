@@ -32,11 +32,15 @@ jobs:
                     do
                       echo "$i" # action on existing file, here echo.
                       echo "changed=true" >> $GITHUB_OUTPUT
+                      echo ${{ inputs.userId }}
                       break
                     done
       - name: Run Script
         if: steps.checkFileExists.outputs.changed == 'true'
         uses: ./
+        with:
+          userId: ${{ inputs.userId }}
+          password: ${{ inputs.password }}
       - name: move processed files
         if: steps.checkFileExists.outputs.changed == 'true' 
         run: |
